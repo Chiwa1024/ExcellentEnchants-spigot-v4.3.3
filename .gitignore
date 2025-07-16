@@ -1,3 +1,6 @@
+.settings
+.project
+.classpath
 /.idea/
 /target/
 /pom.xml.versionsBackup
@@ -13,3 +16,5 @@
 /MC_1_21_3/pom.xml.versionsBackup
 /MC_1_21_4/target/
 /MC_1_21_4/pom.xml.versionsBackup
+/MC_1_21_7/target/
+/MC_1_21_7/pom.xml.versionsBackup

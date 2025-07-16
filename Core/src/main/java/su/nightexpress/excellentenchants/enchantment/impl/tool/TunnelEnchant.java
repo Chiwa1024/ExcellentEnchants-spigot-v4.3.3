@@ -30,7 +30,13 @@ public class TunnelEnchant extends GameEnchantment implements BlockBreakEnchant 
 
     public static final String   ID                   = "tunnel";
     // X and Z offsets for each block AoE mined
-    private static final int[][] MINING_COORD_OFFSETS = new int[][]{{0, 0}, {0, -1}, {-1, 0}, {0, 1}, {1, 0}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1},};
+    private static final int[][] MINING_COORD_OFFSETS = new int[][]{
+        {  0,  0 }, {  0, -1 }, { -1,  0 }, {  0,  1 }, {  1,  0 }, { -1, -1 }, { -1,  1 }, {  1, -1 }, {  1,  1 }, { -2, -2 }, 
+        { -2, -1 }, { -2,  0 }, { -2,  1 }, { -2,  2 }, { -1, -2 }, { -1,  2 }, {  0, -2 }, {  0,  2 }, {  1, -2 }, {  1, 2 }, 
+        {  2, -2 }, {  2, -1 }, {  2,  0 }, {  2,  1 }, {  2,  2 }, { -3, -3 }, { -3, -2 }, { -3, -1 }, { -3,  0 }, { -3, 1 }, 
+        { -3,  2 }, { -3,  3 }, { -2, -3 }, { -2,  3 }, { -1, -3 }, { -1,  3 }, {  0, -3 }, {  0,  3 }, {  1, -3 }, {  1, 3 }, 
+        {  2, -3 }, {  2, 3  }, {  3, -3 }, {  3, -2 }, {  3, -1 }, {  3,  0 }, {  3,  1 }, {  3,  2 }, {  3,  3 } 
+    };
     private static final Set<Material> INTERACTABLE_BLOCKS = new HashSet<>();
 
     static {
@@ -70,7 +76,7 @@ public class TunnelEnchant extends GameEnchantment implements BlockBreakEnchant 
         if (this.disableOnSneak && player.isSneaking()) return false;
 
         Block block = event.getBlock();
-        if (block.getType().isInteractable() && !INTERACTABLE_BLOCKS.contains(block.getType())) return false;
+        if (block.getType().isInteractable() && !INTERACTABLE_BLOCKS.contains(block.getType())) return false; 
         if (block.getDrops(item).isEmpty()) return false;
 
 
@@ -87,7 +93,9 @@ public class TunnelEnchant extends GameEnchantment implements BlockBreakEnchant 
         int blocksBroken = 1;
         if (level == 1) blocksBroken = 2;
         else if (level == 2) blocksBroken = 5;
-        else if (level >= 3) blocksBroken = 9;
+        else if (level == 3) blocksBroken = 9;
+        else if (level == 4) blocksBroken = 25;
+		else if (level >= 5) blocksBroken = 49;
 
         for (int i = 0; i < blocksBroken; i++) {
             if (item.getType().isAir()) break;

@@ -1,0 +1,69 @@
+Command:
+  List:
+    Desc: 自訂附魔列表.
+    Usage: '[player]'
+    DoneOthers: <light_gray>為玩家<light_yellow>%player_name%</light_yellow>打開GUI.</light_gray>
+  GetFuel:
+    Desc: 獲得充能物品.
+    Usage: <enchant> [amount]
+    Done: <light_gray>你獲得了<light_yellow>x%amount% %name%</light_yellow>.</light_gray>
+    Error:
+      NoCharges: <lgray>Enchantment <lred>%name%</lred> don't have charges.</lgray>
+  Enchant:
+    Usage: <enchant> <level> [player] [slot]
+    Desc: 附魔手上的物品.
+    Done:
+      Self: <light_gray><light_yellow>%item%</light_yellow>的附魔是<light_yellow>%enchant% %level%</light_yellow>!</light_gray>
+      Others: <light_gray><light_yellow>%player_display_name%</light_yellow>的<light_yellow>%item%</light_yellow>的附魔是<light_yellow>%enchant% %level%</light_yellow>!</light_gray>
+    Error:
+      NoItem: <red>沒有要附魔的物品!</red>
+  Book:
+    Usage: <player> <enchant> <level>
+    Desc: 給予自訂附魔書.
+    Done: <light_gray>將<light_yellow>%enchant%</light_yellow>附魔書給予<light_yellow>%player_display_name%</light_yellow>.</light_gray>
+  RarityBook:
+    Usage: <player> <tier> <level>
+    Desc: 給予指定品質的附魔書
+    Done: <light_gray>將<light_yellow>%name%</light_yellow>附魔書給予<light_yellow>%player_display_name%</light_yellow>.</light_gray>
+    Error:
+      Empty: <lgray>There is no enchantments with the <lred>%name%</lred> rarity!</lgray>
+  Argument:
+    Name:
+      Level: 等級
+      Slot: 欄位
+      Rarity: 稀有度
+  Disenchant:
+    Desc: Disenchant item in specific slot.
+    Done:
+      Self: <lgray><lyellow>%item%</lyellow> disenchanted from <lyellow>%enchant%</lyellow>!</lgray>
+      Others: <lgray><lyellow>%player_display_name%</lyellow>'s <lyellow>%item%</lyellow> disenchanted from <lyellow>%enchant%</lyellow>!</lgray>
+Error:
+  Command:
+    Argument:
+      InvalidRarity: <lgray><lred>%value%</lred> is not a valid rarity!</lgray>
+      InvalidSlot: <lgray><lred>%value%</lred> is not a valid slot!</lgray>
+ItemCategory:
+  Helmet: 頭盔
+  Chestplate: 胸甲
+  Leggings: 護腿
+  Boots: 靴子
+  Elytra: 鞘翅
+  Sword: 劍
+  Axe: 斧頭
+  Hoe: 鋤頭
+  Pickaxe: 鎬子
+  Shovel: 鏟子
+  Trident: 三叉戟
+  Bow: 弓
+  Crossbow: 弩
+  FishingRod: 釣竿
+  Shield: 盾牌
+  Breakable: Breakable
+  Armor: 盔甲Armor
+  Tool: 工具
+  Weapon: 劍/斧頭
+  Bows: 弓/弩
+  Torso: 胸甲/鞘翅
+  AllWeapon: 所有武器
+  MiningTools: 採礦工具
+
