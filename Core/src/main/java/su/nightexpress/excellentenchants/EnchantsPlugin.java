@@ -18,7 +18,10 @@ import su.nightexpress.excellentenchants.hook.impl.ProtocolLibHook;
 import su.nightexpress.excellentenchants.nms.EnchantNMS;
 import su.nightexpress.excellentenchants.nms.Internal_1_21_3;
 import su.nightexpress.excellentenchants.nms.Internal_1_21_4;
+import su.nightexpress.excellentenchants.nms.Internal_1_21_5;
 import su.nightexpress.excellentenchants.nms.Internal_1_21_7;
+import su.nightexpress.excellentenchants.nms.Internal_1_21_8;
+import su.nightexpress.excellentenchants.nms.Internal_1_21_10;
 import su.nightexpress.excellentenchants.rarity.RarityManager;
 import su.nightexpress.excellentenchants.registry.EnchantRegistry;
 import su.nightexpress.nightcore.NightPlugin;
@@ -89,7 +92,11 @@ public class EnchantsPlugin extends NightPlugin implements ImprovedCommands {
             case MC_1_21 -> new Internal_1_21(this);
             case MC_1_21_3 -> new Internal_1_21_3(this);
             case MC_1_21_4 -> new Internal_1_21_4(this);
+            case MC_1_21_5 -> new Internal_1_21_5(this);
             case MC_1_21_7 -> new Internal_1_21_7(this);
+            case MC_1_21_8 -> new Internal_1_21_8(this);
+            case MC_1_21_9 -> new Internal_1_21_10(this);
+            case MC_1_21_10 -> new Internal_1_21_10(this);
             default -> null;
         };
 
